@@ -1,0 +1,58 @@
+name: Daily Contribution Checklist
+
+on:
+  schedule:
+    - cron: "30 1 * * *"  # 07:30 Asia/Dhaka (UTC+6)
+  workflow_dispatch: {}
+
+permissions:
+  issues: write
+
+jobs:
+  daily-plan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open daily checklist issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const d = new Date(Date.now() + 6 * 3600 * 1000); // Dhaka = UTC+6
+            const today = d.toISOString().slice(0, 10);
+            const body = [
+              '## 🎯 Daily Sprint — ' + today,
+              '',
+              '> Fill this in as you work. Close the issue at evening review.',
+              '',
+              '### ✅ 4 × Small (≤1h each, land same day)',
+              '- [ ] S1: ',
+              '- [ ] S2: ',
+              '- [ ] S3: ',
+              '- [ ] S4: ',
+              '',
+              '### 🔧 4 × Medium (a few hours – 2 days each)',
+              '- [ ] M1: ',
+              '- [ ] M2: ',
+              '- [ ] M3: ',
+              '- [ ] M4: ',
+              '',
+              '### 🏔️ 2 × Large (5–10 day rolling arcs)',
+              '- [ ] L1: ',
+              '- [ ] L2: ',
+              '',
+              '### 🧹 Hygiene',
+              '- [ ] Responded to every review comment (24h rule)',
+              '- [ ] Logged to tracker/contributions.csv',
+              '- [ ] Daily log committed to logs/',
+              '- [ ] Pushed',
+              '',
+              '---',
+              'Portfolio: targets/ · SOP: WORKFLOW.md · Plan: ROADMAP.md'
+            ].join('\n');
+            const issue = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'Daily Sprint — ' + today,
+              body: body,
+              labels: ['daily']
+            });
+            console.log('Created issue #' + issue.data.number);
