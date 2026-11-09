@@ -1,1 +1,27 @@
 date,org_repo,url,type,size,title,status,merged_at,notes
+2026-11-09,huggingface/transformers,(staged),pr,small,"Fix typo "overriden" -> "overridden" in candidate_generator.py comments",staged,,; 1 file(s); verified replacements
+2026-11-09,huggingface/transformers,(staged),pr,small,"Fix duplicated "from from" in OneFormer / Mask2Former attribution comments",staged,,; 2 file(s); verified replacements
+2026-11-09,huggingface/transformers,(staged),pr,small,"Fix dead Kyutai blog link in Helium model doc",staged,,; 1 file(s); verified replacements
+2026-11-09,huggingface/transformers,(staged),pr,small,"Fix dead NATTEN link in DiNAT model doc",staged,,; 1 file(s); verified replacements
+2026-11-09,huggingface/transformers,(staged),pr,small,"Replace dead LMSYS Chatbot Arena link in conversations doc",staged,,; 1 file(s); verified replacements
+2026-11-09,huggingface/transformers,(staged),pr,small,"Fix dead food101 dataset link in image processors doc",staged,,; 1 file(s); verified replacements
+2026-11-09,huggingface/transformers,(staged),pr,small,"Fix FLUTE wheel index URL in Higgs quantization doc",staged,,; 1 file(s); verified replacements
+2026-11-09,huggingface/transformers,(staged),pr,small,"Remove wildcard suffix from Evolla model tips URL",staged,,; 1 file(s); verified replacements
+2026-11-09,huggingface/transformers,(staged),pr,small,"Remove wildcard suffix from TiPSv2 model tips URL",staged,,; 1 file(s); verified replacements
+2026-11-09,huggingface/transformers,(staged),pr,small,"Remove wildcard suffix from FastSpeech2Conformer model tips URL",staged,,; 1 file(s); verified replacements
+2026-11-09,huggingface/transformers,(staged),pr,small,"Fix dead paper link in BiT model doc",staged,,; 1 file(s); verified replacements
+2026-11-09,opencv/opencv,(staged),pr,medium,"Fix Image Addition tutorial example (np.uint8 inputs and expected output)",staged,,fixes #29870; 3 file(s); verified replacements
+2026-11-09,opencv/opencv,(staged),pr,small,"Fix dead OpenEXR downloads link in Windows install guide",staged,,; 1 file(s); verified replacements
+2026-11-09,opencv/opencv,(staged),pr,small,"Fix malformed arXiv markdown link in text spotting tutorial",staged,,; 1 file(s); verified replacements
+2026-11-09,opencv/opencv,(staged),pr,small,"Fix duplicated URL scheme in raster I/O GDAL tutorial",staged,,; 1 file(s); verified replacements
+2026-11-09,k2-fsa/sherpa-onnx,(staged),pr,medium,"Replace dead hf.qhduan.com mirror links with huggingface.co",staged,,; 1 file(s); verified replacements
+2026-11-09,huggingface/transformers,(staged),issue,medium,"Docs: dead links in model_doc pages (12 URLs return 404)",staged,,12 verified dead URLs with evidence
+2026-11-09,huggingface/transformers,(staged),issue,small,"Docs: dead links in quantization guides (fp-quant collection, HQQ blog)",staged,,2 verified dead URLs with evidence
+2026-11-09,huggingface/transformers,(staged),issue,small,"Docs: dead links in community/guides pages (4 URLs return 404)",staged,,4 verified dead URLs with evidence
+2026-11-09,huggingface/transformers,(staged),issue,medium,"Docs: broken download/example asset URLs in code examples (7 URLs return 404)",staged,,7 verified dead URLs with evidence
+2026-11-09,opencv/opencv,(staged),issue,small,"Documentation: dead external links in Python tutorials (5 URLs return 404)",staged,,5 verified dead URLs with evidence
+2026-11-09,opencv/opencv,(staged),issue,small,"Documentation: dead external links in tutorials (6 URLs return 404/410)",staged,,6 verified dead URLs with evidence
+2026-11-09,opencv/opencv,(staged),issue,small,"Documentation: dead vendor links in config_reference (MediaSDK, Qt)",staged,,2 verified dead URLs with evidence
+2026-11-09,k2-fsa/sherpa-onnx,(staged),issue,small,"README: dead vendor links (axera-tech, starfivetech, horizon.ai)",staged,,3 verified dead URLs with evidence
+2026-11-09,k2-fsa/sherpa-onnx,(staged),issue,small,"nodejs-addon-examples README: dead Cohere Aya Expanse paper link",staged,,1 verified dead URLs with evidence
+2026-11-09,modelcontextprotocol/docs,(staged),issue,small,"clients.mdx: 3 dead Goose documentation links",staged,,3 verified dead URLs with evidence
