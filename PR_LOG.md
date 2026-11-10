@@ -364,3 +364,9 @@ Method for every contribution: **find a repo and a real, verifiable bug → clon
 - Ran the PR's suite on the branch (16 passed incl. 3 new range regressions); verified restart truncation safety ("wb" at size_read=0), complete Content-Range validation, no stream leak on rejection. Non-blocking follow-up suggested (missing-header test case).
 
 ### Contribution count: 45 PRs+issues + 2 high-signal review/verification comments = 47 total touchpoints.
+
+### [Review contributions] huggingface/huggingface_hub — two execution-verified reviews
+- #5282 (exclusive-create, buffered path): 11 targeted tests pass on branch; found + verified the stream-path gap (block_size=0 + "x" still silently discards writes — confirmed by source); suggested aligning stream/buffered on FileExistsError, cross-referenced companion PR #5287. https://github.com/huggingface/huggingface_hub/pull/5282#pullrequestreview-5847185872
+- #5287 (stream rejects write modes): 12 targeted tests pass; disproved the text-mode regression concern (fsspec normalizes "r"→"rb" before _open — verified in fsspec source); flagged the "r"/"rb+" direct-construction narrowing as intentional-but-worth-documenting; suggested unified semantics with #5282. https://github.com/huggingface/huggingface_hub/pull/5287#pullrequestreview-5847186258
+
+### Status: 3 PRs fully green (pandas #71994 clean, fastapi #16732 clean, tinygrad #19288 clean) — awaiting maintainer merges.
