@@ -323,3 +323,28 @@ Method for every contribution: **find a repo and a real, verifiable bug → clon
 - **Solution:** in-repo .github/CONTRIBUTING.md verified 200 ×3
 
 **Total: 42 contributions (18 open PRs, 10 issues, 13 closed HF PRs, 1 HF issue-closed, comment thread count per log).**
+
+## Day-3 additions
+
+### [PR · engineering] huggingface/transformers — Remove requires_grad workaround from wav2vec-family feature encoders
+
+- **Status:** open
+- **Link:** https://github.com/huggingface/transformers/pull/50590
+- **Issue found:** #50527 — Dynamo rejects the data-dependent requires_grad assignment, breaking torch.compile(fullgraph=True) training; maintainer direction in-thread: remove the workarounds (reentrant GC unsupported per #49405)
+- **Solution:** Removed across 10 models (wav2vec2, hubert, data2vec_audio, wavlm, sew, sew_d, unispeech, unispeech_sat, wav2vec2_conformer, speecht5), generated files refreshed via modular converter (pure deletion, 59 lines). CPU-verified: grads flow, GC use_reentrant=False OK, fullgraph compile now OK.
+
+### [PR · small] scikit-learn/scikit-learn — replace dead contributor URLs with verified GitHub profiles
+
+- **Status:** open
+- **Link:** https://github.com/scikit-learn/scikit-learn/pull/35373
+- **Issue found:** 4 dead links (3 contributor sites 404 ×3 + 2013 Evernote blog post 404 ×3)
+- **Solution:** GitHub profiles substituted ONLY after profile name-field match (MatthieuPerrot, arjoly, willdawson); Evernote "Read more" line removed, testimonial kept. Load-bearing rst targets preserved.
+
+### [PR · small] fastapi/fastapi — fix dead ReDoc vendor extensions link (13 languages)
+
+- **Status:** open
+- **Link:** https://github.com/fastapi/fastapi/pull/16732
+- **Issue found:** docs moved off redocly/redoc GitHub repo; old md path 404 ×3
+- **Solution:** redocly.com/docs/redoc/redoc-vendor-extensions verified 200 ×3 (documents x-logo); applied to en + all 12 translations. Excluded: 20 deleted user profiles in historical contributor lists; GitHub PR-link false positives (bot-blocking).
+
+**Total: 45 contributions.**
