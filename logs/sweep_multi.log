@@ -1,0 +1,11 @@
+[dspy] urls=228 todo=228
+[dspy] DEAD https://github.com/jimporter/mike):
+[dspy] DONE dead=1
+[gymnasium] urls=21 todo=21
+[gymnasium] DONE dead=0
+[tinygrad] urls=54 todo=54
+[tinygrad] DEAD https://github.com/tinygrad/tinygrad/blob/master/docs/abstractions2.py
+[tinygrad] DEAD https://github.com/tinygrad/tinygrad/stargazers
+[tinygrad] DONE dead=2
+[pytorch-lightning] urls=49 todo=49
+[pytorch-lightning] DEAD https://lightning.ai/docs/pytorch/stable/generated/CONTRIBUTING.html?utm_source=ptl_readme&utm_medium=referral&utm_campaign=ptl_readme

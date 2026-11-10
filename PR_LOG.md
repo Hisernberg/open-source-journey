@@ -277,3 +277,33 @@ Method for every contribution: **find a repo and a real, verifiable bug → clon
 - **Link:** https://github.com/k2-fsa/sherpa-ncnn/issues/448#issuecomment-6770925370
 - **Issue found:** I had claimed 200 OK without verification
 - **Solution:** Posted honest correction
+
+---
+
+## Day-2 evening additions (post-audit)
+
+### [PR · small] scikit-image/scikit-image — docs: fix 6 dead documentation links
+
+- **Status:** open
+- **Link:** https://github.com/scikit-image/scikit-image/pull/8401
+- **Issue found:** Full sweep of 1,263 doc/README URLs; 6 dead (git-scm book subdomain ×1, numpy howto_document ×3, scipy 1.0.0 release notes ×2); each verified 404 ×3
+- **Solution:** All replacements fetched live and confirmed 200 OK (git-scm.com same path; numpydoc format guide; scipy-1.0.0 versioned archive). Deliberately excluded: 2 deleted GitHub user profiles in release notes (historical record) and a 503-transient link.
+
+### [PR · small] pandas-dev/pandas — docs: fix 2 dead links in historical whatsnew notes
+
+- **Status:** open
+- **Link:** https://github.com/pandas-dev/pandas/pull/71994
+- **Issue found:** Sweep of 703 doc URLs; 2 dead in user-facing whatsnew (renamed JSON-Table-Schema spec; discontinued ScatterCI service); each verified 404 ×3
+- **Solution:** table-schema spec URL verified 200 ×3; ScatterCI unlinked, sentence kept. crates.io/calamine 404 excluded as bot-block false positive (API 200; crate exists). Conf.py ignore-list context explained in PR body.
+
+### [PR follow-up] opencv/opencv #30754 — reviewer-requested consistency fix
+
+- **Status:** pushed 5b0f2b1 + replied to reviewer
+- **Issue found:** Prasadayus: embed fix alone leaves text/code referencing lena.png (inconsistent)
+- **Solution:** Shipped the REAL 512×512 lena.png (from samples/java/clojure/simple-sample/resources/images/) into both tutorial images dirs; all embed/text/code refs now consistently lena.png; dead cp path fixed (+ resource→resources typo)
+
+### [PR maintenance] k2-fsa/sherpa-onnx #4183 — body aligned per CodeRabbit
+
+- **Status:** done (body updated via API)
+- **Issue found:** Bot: title/body still said huggingface.co while mirror column points at hf-mirror.com
+- **Solution:** PR body aligned; bot thread stays resolved
