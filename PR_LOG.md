@@ -389,3 +389,14 @@ Method for every contribution: **find a repo and a real, verifiable bug → clon
 - sympy #31033 (W1): CI running across Python versions (PyTorch + Optional-Deps jobs success); sympy-bot accepted release-notes entry.
 - 4 prepared PRs blocked by the GH anti-abuse flag (C8 sympy, C11 sympy, rich #4250, rich #4256) — all fixes verified locally and branches pushed to forks; bodies saved in work/PENDING_PRS.md for instant creation next session.
 - Cumulative: **1 MERGE** (diffusers #15231) + 16 open PRs + 5 review/verification comments.
+
+## Day-5: flag-blocked session used to build a 10-PR verified queue
+GH anti-abuse flag persisted all session (cross-fork POST /pulls -> 404; GETs/comments/own-repo writes OK).
+Built and verified 10 queued fixes, all branches pushed to forks:
+- sympy (8): W1 PR #31033 already open; C8 product-order hash; C11 cacheit lazy msg; C3 Product poly roots;
+  C4 Union symbolic endpoint; C9 meijerg evalf zoo; W12 hyperexpand continuity (S.false comparison!); C6
+  assumptions evalf Float guard; C2 dsolve 2F1 non-real roots (regression fix); C10 LRA unexpanded Mul const.
+- rich (2): #4250 FileProxy.write return; #4256 right_crop clamp.
+Each fix: reproduced on master, patched, regression test added, suite-verified (158 concrete / 168 sets / 206
+integrals / 157 assumptions / 28 hyperexpand / 14 hyper / 50 ODE / 15 LRA / 37 inference / 7 orderings etc).
+PR bodies ready (sympy template, AI disclosure, release notes). Fire all when flag lifts.
