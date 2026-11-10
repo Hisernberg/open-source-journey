@@ -348,3 +348,19 @@ Method for every contribution: **find a repo and a real, verifiable bug → clon
 - **Solution:** redocly.com/docs/redoc/redoc-vendor-extensions verified 200 ×3 (documents x-logo); applied to en + all 12 translations. Excluded: 20 deleted user profiles in historical contributor lists; GitHub PR-link false positives (bot-blocking).
 
 **Total: 45 contributions.**
+
+## Day-4 (vLLM/SGLang deep-dive + Kaggle/HF ecosystem)
+
+### Reality check: the crowded frontier
+- vLLM/SGLang fresh-bug sweep (Nov 6-10): 25+ issues timeline-checked — every well-reported issue already has a linked PR within ~24h, or needs GPUs/design buy-in. Hot new architectures (Gemma4 3.4M dl/mo, GlmMoeDsa 1.2M, Qwen3_5Moe 435K) are ALL already supported in both vLLM and SGLang.
+- transformers #50590 (wav2vec requires_grad workaround removal) was closed by @vasqu: maintainer PR #50544 already existed for the same issue (not visible in the issue thread). Closed as duplicate — fair. Lesson institutionalized: timeline/linked-PR check BEFORE implementation (was applied this session and saved 3 duplicate attempts: sglang #49403/#49550, vllm #66436).
+
+### [Issue contribution] Kaggle/kaggle-cli #1207 — wire-level verification
+- Comment: https://github.com/Kaggle/kaggle-cli/issues/1207#issuecomment-6775197881
+- Simulated the real client flow offline (blob upload mocked): the wire JSON carries files[].description + files[].columns[].description correctly on main (kagglesdk 0.1.38). Isolated the drop to the server; saved maintainers a client-side investigation.
+
+### [Review contribution] Kaggle/kagglehub #323 — execution-verified review
+- Review: https://github.com/kaggle/kagglehub/pull/323#pullrequestreview-5846923724
+- Ran the PR's suite on the branch (16 passed incl. 3 new range regressions); verified restart truncation safety ("wb" at size_read=0), complete Content-Range validation, no stream leak on rejection. Non-blocking follow-up suggested (missing-header test case).
+
+### Contribution count: 45 PRs+issues + 2 high-signal review/verification comments = 47 total touchpoints.
