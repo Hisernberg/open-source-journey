@@ -1,27 +1,38 @@
 date,org_repo,url,type,size,title,status,merged_at,notes
-2026-11-09,huggingface/transformers,(staged),pr,small,"Fix typo "overriden" -> "overridden" in candidate_generator.py comments",staged,,; 1 file(s); verified replacements
-2026-11-09,huggingface/transformers,(staged),pr,small,"Fix duplicated "from from" in OneFormer / Mask2Former attribution comments",staged,,; 2 file(s); verified replacements
-2026-11-09,huggingface/transformers,(staged),pr,small,"Fix dead Kyutai blog link in Helium model doc",staged,,; 1 file(s); verified replacements
-2026-11-09,huggingface/transformers,(staged),pr,small,"Fix dead NATTEN link in DiNAT model doc",staged,,; 1 file(s); verified replacements
-2026-11-09,huggingface/transformers,(staged),pr,small,"Replace dead LMSYS Chatbot Arena link in conversations doc",staged,,; 1 file(s); verified replacements
-2026-11-09,huggingface/transformers,(staged),pr,small,"Fix dead food101 dataset link in image processors doc",staged,,; 1 file(s); verified replacements
-2026-11-09,huggingface/transformers,(staged),pr,small,"Fix FLUTE wheel index URL in Higgs quantization doc",staged,,; 1 file(s); verified replacements
-2026-11-09,huggingface/transformers,(staged),pr,small,"Remove wildcard suffix from Evolla model tips URL",staged,,; 1 file(s); verified replacements
-2026-11-09,huggingface/transformers,(staged),pr,small,"Remove wildcard suffix from TiPSv2 model tips URL",staged,,; 1 file(s); verified replacements
-2026-11-09,huggingface/transformers,(staged),pr,small,"Remove wildcard suffix from FastSpeech2Conformer model tips URL",staged,,; 1 file(s); verified replacements
-2026-11-09,huggingface/transformers,(staged),pr,small,"Fix dead paper link in BiT model doc",staged,,; 1 file(s); verified replacements
-2026-11-09,opencv/opencv,(staged),pr,medium,"Fix Image Addition tutorial example (np.uint8 inputs and expected output)",staged,,fixes #29870; 3 file(s); verified replacements
-2026-11-09,opencv/opencv,(staged),pr,small,"Fix dead OpenEXR downloads link in Windows install guide",staged,,; 1 file(s); verified replacements
-2026-11-09,opencv/opencv,(staged),pr,small,"Fix malformed arXiv markdown link in text spotting tutorial",staged,,; 1 file(s); verified replacements
-2026-11-09,opencv/opencv,(staged),pr,small,"Fix duplicated URL scheme in raster I/O GDAL tutorial",staged,,; 1 file(s); verified replacements
-2026-11-09,k2-fsa/sherpa-onnx,(staged),pr,medium,"Replace dead hf.qhduan.com mirror links with huggingface.co",staged,,; 1 file(s); verified replacements
-2026-11-09,huggingface/transformers,(staged),issue,medium,"Docs: dead links in model_doc pages (12 URLs return 404)",staged,,12 verified dead URLs with evidence
-2026-11-09,huggingface/transformers,(staged),issue,small,"Docs: dead links in quantization guides (fp-quant collection, HQQ blog)",staged,,2 verified dead URLs with evidence
-2026-11-09,huggingface/transformers,(staged),issue,small,"Docs: dead links in community/guides pages (4 URLs return 404)",staged,,4 verified dead URLs with evidence
-2026-11-09,huggingface/transformers,(staged),issue,medium,"Docs: broken download/example asset URLs in code examples (7 URLs return 404)",staged,,7 verified dead URLs with evidence
-2026-11-09,opencv/opencv,(staged),issue,small,"Documentation: dead external links in Python tutorials (5 URLs return 404)",staged,,5 verified dead URLs with evidence
-2026-11-09,opencv/opencv,(staged),issue,small,"Documentation: dead external links in tutorials (6 URLs return 404/410)",staged,,6 verified dead URLs with evidence
-2026-11-09,opencv/opencv,(staged),issue,small,"Documentation: dead vendor links in config_reference (MediaSDK, Qt)",staged,,2 verified dead URLs with evidence
-2026-11-09,k2-fsa/sherpa-onnx,(staged),issue,small,"README: dead vendor links (axera-tech, starfivetech, horizon.ai)",staged,,3 verified dead URLs with evidence
-2026-11-09,k2-fsa/sherpa-onnx,(staged),issue,small,"nodejs-addon-examples README: dead Cohere Aya Expanse paper link",staged,,1 verified dead URLs with evidence
-2026-11-09,modelcontextprotocol/docs,(staged),issue,small,"clients.mdx: 3 dead Goose documentation links",staged,,3 verified dead URLs with evidence
+2026-11-09,huggingface/transformers,(staged),pr,small,"Fix typo overriden"" -> ""overridden"" in candidate_generator.py comments""",staged,,; 1 file(s); verified replacements
+2026-11-09,huggingface/transformers,(staged),pr,small,"Fix duplicated from from"" in OneFormer / Mask2Former attribution comments""",staged,,; 2 file(s); verified replacements
+2026-11-10,huggingface/transformers,https://github.com/huggingface/transformers/pull/50559,pr,small,Fix dead Kyutai blog link in Helium model doc,closed,,; 1 file(s); verified replacements
+2026-11-10,huggingface/transformers,https://github.com/huggingface/transformers/pull/50560,pr,small,Fix dead NATTEN link in DiNAT model doc,closed,,; 1 file(s); verified replacements
+2026-11-10,huggingface/transformers,https://github.com/huggingface/transformers/pull/50561,pr,small,Replace dead LMSYS Chatbot Arena link in conversations doc,closed,,; 1 file(s); verified replacements
+2026-11-10,huggingface/transformers,https://github.com/huggingface/transformers/pull/50562,pr,small,Fix dead food101 dataset link in image processors doc,closed,,; 1 file(s); verified replacements
+2026-11-10,huggingface/transformers,https://github.com/huggingface/transformers/pull/50563,pr,small,Fix FLUTE wheel index URL in Higgs quantization doc,closed,,; 1 file(s); verified replacements
+2026-11-10,huggingface/transformers,https://github.com/huggingface/transformers/pull/50564,pr,small,Remove wildcard suffix from Evolla model tips URL,closed,,; 1 file(s); verified replacements
+2026-11-10,huggingface/transformers,https://github.com/huggingface/transformers/pull/50565,pr,small,Remove wildcard suffix from TiPSv2 model tips URL,closed,,; 1 file(s); verified replacements
+2026-11-10,huggingface/transformers,https://github.com/huggingface/transformers/pull/50566,pr,small,Remove wildcard suffix from FastSpeech2Conformer model tips URL,closed,,; 1 file(s); verified replacements
+2026-11-10,huggingface/transformers,https://github.com/huggingface/transformers/pull/50567,pr,small,Fix dead paper link in BiT model doc,closed,,; 1 file(s); verified replacements
+2026-11-10,opencv/opencv,https://github.com/opencv/opencv/pull/30747,pr,medium,Fix Image Addition tutorial example (np.uint8 inputs and expected output),closed,,fixes #29870; 3 file(s); verified replacements
+2026-11-10,opencv/opencv,https://github.com/opencv/opencv/pull/30748,pr,small,Fix dead OpenEXR downloads link in Windows install guide,open — APPROVED by maintainer,,; 1 file(s); verified replacements
+2026-11-10,opencv/opencv,https://github.com/opencv/opencv/pull/30749,pr,small,Fix malformed arXiv markdown link in text spotting tutorial,open — APPROVED by maintainer,,; 1 file(s); verified replacements
+2026-11-10,opencv/opencv,https://github.com/opencv/opencv/pull/30750,pr,small,Fix duplicated URL scheme in raster I/O GDAL tutorial,open — APPROVED by maintainer,,; 1 file(s); verified replacements
+2026-11-10,k2-fsa/sherpa-onnx,https://github.com/k2-fsa/sherpa-onnx/pull/4183,pr,medium,Replace dead hf.qhduan.com mirror links with huggingface.co,open,,; 1 file(s); verified replacements
+2026-11-10,huggingface/transformers,https://github.com/huggingface/transformers/issues/50568,issue,medium,Docs: dead links in model_doc pages (12 URLs return 404),open,,12 verified dead URLs with evidence
+2026-11-10,huggingface/transformers,https://github.com/huggingface/transformers/issues/50569,issue,small,"Docs: dead links in quantization guides (fp-quant collection, HQQ blog)",closed,,2 verified dead URLs with evidence
+2026-11-10,huggingface/transformers,https://github.com/huggingface/transformers/issues/50570,issue,small,Docs: dead links in community/guides pages (4 URLs return 404),closed,,4 verified dead URLs with evidence
+2026-11-10,huggingface/transformers,https://github.com/huggingface/transformers/issues/50571,issue,medium,Docs: broken download/example asset URLs in code examples (7 URLs return 404),closed,,7 verified dead URLs with evidence
+2026-11-10,opencv/opencv,https://github.com/opencv/opencv/issues/30751,issue,small,Documentation: dead external links in Python tutorials (5 URLs return 404),open,,5 verified dead URLs with evidence
+2026-11-10,opencv/opencv,https://github.com/opencv/opencv/issues/30752,issue,small,Documentation: dead external links in tutorials (6 URLs return 404/410),open,,6 verified dead URLs with evidence
+2026-11-10,opencv/opencv,https://github.com/opencv/opencv/issues/30753,issue,small,"Documentation: dead vendor links in config_reference (MediaSDK, Qt)",open,,2 verified dead URLs with evidence
+2026-11-10,k2-fsa/sherpa-onnx,https://github.com/k2-fsa/sherpa-onnx/issues/4184,issue,small,"README: dead vendor links (axera-tech, starfivetech, horizon.ai)",open,,3 verified dead URLs with evidence
+2026-11-10,k2-fsa/sherpa-onnx,https://github.com/k2-fsa/sherpa-onnx/issues/4182,issue,small,nodejs-addon-examples README: dead Cohere Aya Expanse paper link,open,,1 verified dead URLs with evidence
+2026-11-10,modelcontextprotocol/docs,(staged),issue,small,clients.mdx: 3 dead Goose documentation links,dropped (repo archived),,3 verified dead URLs with evidence
+2026-11-10,huggingface/transformers,https://github.com/huggingface/transformers/pull/50557,pr,small,"Fix typo ""overriden"" -> ""overridden"" in candidate_generator.py comments",closed,,
+2026-11-10,huggingface/transformers,https://github.com/huggingface/transformers/pull/50558,pr,small,"Fix duplicated ""from from"" in OneFormer / Mask2Former attribution comments",closed,,
+2026-11-10,huggingface/transformers,https://github.com/huggingface/transformers/pull/50572,pr,small,"Fix comment typos in generation modules (overridden, useful)",closed,,
+2026-11-10,huggingface/transformers,https://github.com/huggingface/transformers/pull/50573,pr,small,"Fix ""traning"" typo in Japanese model_sharing doc heading",closed,,
+2026-11-10,opencv/opencv,https://github.com/opencv/opencv/pull/30754,pr,small,Fix broken image references to non-existent images/lena.png,open,,
+2026-11-10,opencv/opencv,https://github.com/opencv/opencv/pull/30757,pr,small,Fix Image Addition tutorial: make example shapes consistent (2-D inputs),open,,
+2026-11-10,k2-fsa/sherpa-ncnn,https://github.com/k2-fsa/sherpa-ncnn/pull/447,pr,small,Fix dead Vulkan SDK download link and typos in install-vulkan-macos.md,open,,
+2026-11-10,k2-fsa/sherpa-ncnn,https://github.com/k2-fsa/sherpa-ncnn/issues/448,issue,small,"README: dead vendor links in Boards section (starfivetech.com, developer.horizon.ai)",open,,
+2026-11-10,huggingface/diffusers,https://github.com/huggingface/diffusers/pull/15231,pr,small,Update dead Kaggle Cats vs Dogs download URL in create_dataset doc,open,,
+2026-11-10,huggingface/diffusers,https://github.com/huggingface/diffusers/pull/15232,pr,small,"Fix two dead pipeline-doc links in LoRA loaders doc (qwenimage, z_image)",open (opened after audit),,
+2026-11-10,huggingface/diffusers,https://github.com/huggingface/diffusers/issues/15233,issue,medium,Docs: 17 dead external links (verified ×3) — upstream content removed,open (opened after audit),,
