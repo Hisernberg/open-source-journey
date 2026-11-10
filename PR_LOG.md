@@ -307,3 +307,19 @@ Method for every contribution: **find a repo and a real, verifiable bug → clon
 - **Status:** done (body updated via API)
 - **Issue found:** Bot: title/body still said huggingface.co while mirror column points at hf-mirror.com
 - **Solution:** PR body aligned; bot thread stays resolved
+
+### [PR · small] tinygrad/tinygrad — docs: point quickstart at abstractions3.py
+
+- **Status:** open
+- **Link:** https://github.com/tinygrad/tinygrad/pull/19288
+- **Issue found:** quickstart.md links docs/abstractions2.py, removed from repo (404 ×3)
+- **Solution:** abstractions3.py verified 200 ×3, covers the same front-to-back hardware walkthrough
+
+### [PR · small] Lightning-AI/pytorch-lightning — docs: fix dead CONTRIBUTING link
+
+- **Status:** open
+- **Link:** https://github.com/Lightning-AI/pytorch-lightning/pull/22146
+- **Issue found:** README contribution link (lightning.ai …/CONTRIBUTING.html) 404 ×3, with and without utm query
+- **Solution:** in-repo .github/CONTRIBUTING.md verified 200 ×3
+
+**Total: 42 contributions (18 open PRs, 10 issues, 13 closed HF PRs, 1 HF issue-closed, comment thread count per log).**

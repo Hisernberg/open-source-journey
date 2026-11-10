@@ -9,3 +9,6 @@
 [tinygrad] DONE dead=2
 [pytorch-lightning] urls=49 todo=49
 [pytorch-lightning] DEAD https://lightning.ai/docs/pytorch/stable/generated/CONTRIBUTING.html?utm_source=ptl_readme&utm_medium=referral&utm_campaign=ptl_readme
+[pytorch-lightning] DEAD https://www.codefactor.io/repository/github/Lightning-AI/lightning
+[pytorch-lightning] DONE dead=2
+ALL DONE
