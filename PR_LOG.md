@@ -370,3 +370,17 @@ Method for every contribution: **find a repo and a real, verifiable bug → clon
 - #5287 (stream rejects write modes): 12 targeted tests pass; disproved the text-mode regression concern (fsspec normalizes "r"→"rb" before _open — verified in fsspec source); flagged the "r"/"rb+" direct-construction narrowing as intentional-but-worth-documenting; suggested unified semantics with #5282. https://github.com/huggingface/huggingface_hub/pull/5287#pullrequestreview-5847186258
 
 ### Status: 3 PRs fully green (pandas #71994 clean, fastapi #16732 clean, tinygrad #19288 clean) — awaiting maintainer merges.
+
+## Day-4 session 2: sympy deep engineering (umbrella #31017) + rich fixes
+
+### sympy — item W1 of #31017 (30-defect umbrella issue; only W13 was claimed)
+- **PR #31033 OPEN**: `solvers: enumerate all monic root divisors in rsolve_hyper`. Root cause beyond the report: `roots(p/q, n).keys()` dropped multiplicities AND the hand-built candidate list never built products of distinct roots — ratios like `1/(n+1)**2` (W1a) and `(n+1)*(n+2)` (W1b) were unreachable → rsolve returned 0. Replaced with full monic-divisor enumeration (Petkovšek), preserving integer shift-coprime pruning; added complex-shift candidate skip (found via test_rsolve_0_sol_homogeneous regression — quadratic with complex roots crashed product()/combsimp). 424/424 solvers tests pass. https://github.com/sympy/sympy/pull/31033
+- **C8 fix DONE (PR pending)**: `_ItemGetter.__hash__` missing → every ProductOrder unhashable. Fixed + hash tests added; note: groebner with product order then hits the deeper #8033 IndexError (documented). Branch pushed to fork; PR creation blocked by temporary GH anti-abuse flag on cross-fork PRs (diagnosed: comments 201, own-repo PRs 201, cross-fork 404 even for previously-successful branch). Retry scheduled.
+
+### rich — two precise bug reports reproduced + fixed
+- **#4250**: FileProxy.write() returned 0 — loop consumed `text` before `return len(text)`. Fixed by tracking consumed length. 
+- **#4256**: Text.right_crop(-1) truncated from START and grew length; amount > len drove _length negative (found the overshoot case with my own edge tests). Fixed by clamping to [0, len].
+- Both verified with edge cases; 117 relevant tests pass; 8 pre-existing env failures identical on clean main (ANSI/pygments). 2 more failures proved flaky (pass on my tree, fail on clean — pygments hash-seed). PRs queued (same GH flag).
+
+### Infrastructure learnings
+- GitHub anti-abuse flagging: new account + rapid successive cross-fork PRs → POST /pulls returns 404 (not 422!) while GET/issue-comments/own-repo writes stay 201. Pace PR creation.
