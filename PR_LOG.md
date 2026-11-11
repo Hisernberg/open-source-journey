@@ -469,3 +469,21 @@ User provided fresh tokens (GitHub/Kaggle/HF). Findings:
   (search + full-tree + P12), 6 bug classes triaged, 6 real-bug PRs shipped.
 - Pending user actions: google CLA for #19044 (browser); sympy/rich forks
   PR-blocked (branches parked with full PR bodies in scripts/fire_queue.py).
+
+## Day-7: second heavy session — 1 MERGE (psycopg #1493!), feedback round, account polish
+- **psycopg #1493 MERGED** (lifetime merges: 6). dvarrazzo: "thank you very much" ♥
+- pyinstaller #9572 CLOSED by maintainer: bugs acknowledged as real ("would have been an
+  acceptable issue report") but AI-disclosure boilerplate unwelcome → LESSON: tight PR bodies,
+  no boilerplate cruft. Converted to a clean issue per the maintainer's own framing:
+  pyinstaller #9574 (KeyError + option leak, fix branch referenced).
+- sympy #31033: replied to smichr — Check Authors green after the author-email force-push;
+  only pypy-3.11 job red (infra: ubuntu-latest migration warning, no test failures).
+- Account polish: bio set, 3 missing repo descriptions written (from their READMEs), topics
+  on 6 repos, profile repo Hisernberg/Hisernberg created with README (real links only).
+  Pinned-items: no API/GraphQL mutation exists — web UI only (user action).
+- Kaggle KGAT verified: Bearer auth works on api/v1 REST (CLI is OAuth-only, unusable headless).
+- Round-4 scan (260 repos incl. 40 new: vllm, langchain, transformers, ultralytics...):
+  P26 un-awaited-coroutine pattern DROPPED (14/14 top candidates were false positives —
+  gather/wait_for/StreamingResponse wrappers). P23 is-literal: Gooey cluster found.
+- **Gooey #985**: `state['error'] is not ''` in 7 widget files → `!= ''` (interning-accident bug).
+- Round-5 scan running: P12+P23 over the ~160 repos not yet covered by those patterns.
