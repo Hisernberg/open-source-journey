@@ -487,3 +487,13 @@ User provided fresh tokens (GitHub/Kaggle/HF). Findings:
   gather/wait_for/StreamingResponse wrappers). P23 is-literal: Gooey cluster found.
 - **Gooey #985**: `state['error'] is not ''` in 7 widget files → `!= ''` (interning-accident bug).
 - Round-5 scan running: P12+P23 over the ~160 repos not yet covered by those patterns.
+
+### Day-7 s2: round-5 triaged; 4 more engineering PRs (campaign total: 10)
+7. Gooey #985 — `state['error'] is not ''` identity comparison in 7 widgets → `!= ''`
+8. celery #11077 — 2 control-command logs printed literal '{task}' braces
+9. pipenv #6785 — vendoring license path built as literal '{override.name}.{filename}'
+10. conda #16989 — channels validation error printed literal '{channel}'
+- Triage notes: twisted/pylint/buildbot logging = kwargs-style formatters (FP); matplotlib
+  artist template = formatted inside _update_props (FP); click/gettext/rich = deliberate
+  templates (FP); GitPython '^{tree}' = git rev syntax (FP).
+- Session: 1 merge (psycopg), 4 PRs, pyinstaller issue #9574, sympy reply, profile polish.
