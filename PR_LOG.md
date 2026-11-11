@@ -502,3 +502,21 @@ User provided fresh tokens (GitHub/Kaggle/HF). Findings:
 - Tight-body strategy validated: pipenv merged <1h after filing.
 - Round-6 launched: P38 utcnow()/utcfromtimestamp deprecation (py3.12), P39 deprecated
   unittest aliases, P35 strip() multi-char-literal misuse — over all ~260 tracked repos.
+
+### Day-7 s4: round-6 P38+P35 shipped — 10 new PRs (campaign total: 20), pipenv MERGED (lifetime 7)
+11. pytube #2169 — utcnow().timestamp() TZ bug (proven 5h skew) + deprecated utcfromtimestamp
+12. graphene #1611 — version.py utcfromtimestamp deprecation
+13. nose2 #690 — junitxml utcfromtimestamp, byte-identical naive output
+14. coqui-TTS #4449 — zip_filepath.strip(".zip") char-strip bug ("pizzazz.zip" → "a")
+15. dagster #34428 — rstrip(".graphql") → removesuffix (body corrected: digits not in set)
+16. pytorch/vision #9752 — inaturalist rstrip(".tar.gz") ("imagenet" → "imagene"); CLA needed
+17. bokeh #15741 — subcommand modname rstrip(".py")
+18. nats.py #1115 — micro service _started ×3, strftime output identical
+19. azure-sdk #49961 — sdk-tools utcnow ×2, naive-preserving; CLA replied inline (agree)
+20. apache/libcloud #2217 — utcnow ×9 sites, naive-preserving (GoogleTestCase mock safety)
+- localstack: fix pushed to fork, but PR creation FORBIDDEN via API (REST 404 + GraphQL
+  FORBIDDEN) — repo-level policy; needs manual PR from web by user.
+- beam skipped: BEAM Jira issue required, cannot create from sandbox.
+- Triaged-out P38: rasa (mixed naive DB semantics), arrow (gdb helper), elasticsearch-py
+  (dsl public API shape), PynamoDB bench, k8s example, python-pptx (mixed naive) — kept
+  the safe set to protect merge odds.
