@@ -457,3 +457,15 @@ User provided fresh tokens (GitHub/Kaggle/HF). Findings:
    Repro: token streams differ vs clean baseline. tests/test_haxe.py: old fail / new pass.
 - Triage: buildbot (safe [:] rebind), virtualenv (documented lock registry) = intentional.
 - P7 silent-excepts (celery/ansible/keyring): all intentional control flow — pattern dropped.
+
+### Day-6 s4: batch total = 6 engineering PRs (all open + mergeable, 0 complaints)
+5. dask #12708 — 2 missing f-strings in error messages (csv.py printed
+   "dd.{reader_name}" literally; arrow.py printed {old_end}/{divisions[0]} literals)
+6. psycopg #1493 — tools/update_error_prefixes.py missing f-string (printed
+   "{opt.pgroot}" instead of the path)
+- sympy #31033: Check Authors CI now PASSES after the author-email force-push;
+  only pypy-3.11 job fails = infra (ubuntu-latest migration warning), unrelated.
+- Repo coverage this campaign: ~220 repos scanned across 3 rounds
+  (search + full-tree + P12), 6 bug classes triaged, 6 real-bug PRs shipped.
+- Pending user actions: google CLA for #19044 (browser); sympy/rich forks
+  PR-blocked (branches parked with full PR bodies in scripts/fire_queue.py).
