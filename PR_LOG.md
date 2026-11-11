@@ -497,3 +497,8 @@ User provided fresh tokens (GitHub/Kaggle/HF). Findings:
   artist template = formatted inside _update_props (FP); click/gettext/rich = deliberate
   templates (FP); GitPython '^{tree}' = git rev syntax (FP).
 - Session: 1 merge (psycopg), 4 PRs, pyinstaller issue #9574, sympy reply, profile polish.
+
+### Day-7 s3: pipenv #6785 MERGED — lifetime 7
+- Tight-body strategy validated: pipenv merged <1h after filing.
+- Round-6 launched: P38 utcnow()/utcfromtimestamp deprecation (py3.12), P39 deprecated
+  unittest aliases, P35 strip() multi-char-literal misuse — over all ~260 tracked repos.
