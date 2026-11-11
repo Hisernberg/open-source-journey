@@ -531,3 +531,27 @@ User provided fresh tokens (GitHub/Kaggle/HF). Findings:
   guarded/dead fallbacks (FP); celery/sklearn/sqlalchemy collections.Mapping = docstrings (FP);
   bandit ssl.wrap_socket = its own detection literals (FP); ipython time.clock = docstrings.
 - Open PRs at session end: 27 (25 engineering + 2 blocked by CLA browser sign-in).
+
+### Day-7 s6: sweep + fixes + round-8 + blocked-PR queue
+- conda #16989: CLA green -> nudged for review.
+- gcp #19044: marked Ready for review; fixed gemini-code-assist catch (docstring order) via
+  git data API; replied.
+- sympy #31033: FIXED Check Authors (maintainer ask): .mailmap needs BOTH the noreply entry
+  AND the account git-identity entry (Nabid Nur <nurnabid754@gmail.com>) + checker-exact
+  codepoint sort. Now completed/success.
+- libcloud #2216: CI lint failure = my test files not black/isort formatted; reformatted,
+  pushed; CI now action_required (org must approve workflow run for forks).
+- TTS #4449: CI failures triaged = pre-existing (main branch equally red) + setup-level
+  (py3.9 env), not my one-liner.
+- fastapi #16732: closed as superseded (maintainer folded into #16407) with thank-you.
+- Round-8 (40 fresh repos: httpx, rich, textual, click, tqdm, mypy, networkx, urllib3,
+  werkzeug, gunicorn...): 54 hits ALL intentional char-set strips; 0 P50/P38/removed-API.
+  Top-tier repos are lint-clean — stop scanning that tier with this pattern.
+- httpx README dead /advanced/ link found+fixed; encode org BLOCKS API PR creation
+  (REST 404 + GraphQL FORBIDDEN) -> branch fix/readme-advanced-link ready on fork,
+  needs manual web PR.
+- BLOCKED-PR QUEUE (user must click "Compare & pull request"):
+  1. Hisernberg/localstack branch fix/utcnow-deprecation
+     Title: Replace deprecated datetime.utcnow() with timezone-aware now()
+  2. Hisernberg/httpx branch fix/readme-advanced-link
+     Title: README: fix dead Advanced Usage docs link
