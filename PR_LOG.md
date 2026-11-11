@@ -520,3 +520,14 @@ User provided fresh tokens (GitHub/Kaggle/HF). Findings:
 - Triaged-out P38: rasa (mixed naive DB semantics), arrow (gdb helper), elasticsearch-py
   (dsl public API shape), PynamoDB bench, k8s example, python-pptx (mixed naive) — kept
   the safe set to protect merge odds.
+
+### Day-7 s5: round-7 removed-API sweep + 2 more PRs (campaign total: 22 engineering PRs)
+21. apache/libcloud #2218 — EquinixMetal list_resources_async: exec'd @asyncio.coroutine +
+    yield from (both REMOVED in py3.11) → AttributeError on every call. Verified the exec
+    snippet crashes on 3.12; rewrote as plain async def, executor-per-project preserved.
+22. OpenNMT #2606 — tools/convertv2_v3.py: `import imp` (removed py3.12) → importlib
+    self-registration under legacy module paths for checkpoint unpickling.
+- Round-7 triage: seaborn/azure/pybuilder/pdm/libcloud-py3 removed-API hits were all
+  guarded/dead fallbacks (FP); celery/sklearn/sqlalchemy collections.Mapping = docstrings (FP);
+  bandit ssl.wrap_socket = its own detection literals (FP); ipython time.clock = docstrings.
+- Open PRs at session end: 27 (25 engineering + 2 blocked by CLA browser sign-in).
