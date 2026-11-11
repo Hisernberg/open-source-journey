@@ -446,3 +446,14 @@ User provided fresh tokens (GitHub/Kaggle/HF). Findings:
 2. google-cloud-python #19044 — move_markdown_pages cwd=[] shared-default leak
    (A/B proof: after mid-recursion failure, 2nd call skipped top-level files;
    fixed call processes them; stubbed-sphinx functional test)
+
+### Day-6 s3: 2 more engineering PRs (batch total: 4) + P18 triage complete
+3. apache/libcloud #2216 — 4 DNS response classes shared class-level errors/objects
+   lists (state leaked across requests; nsone get_zone() objects[0] stale).
+   A/B: old code 4 failures+1 error, fixed 60/60 pass. Learned: base Response.__init__
+   calls success() => instance lists must exist BEFORE super().__init__().
+4. pygments #3479 — HaxeLexer.preproc_stack class-level mutable attr shared across
+   cached lexer instances; unbalanced #if corrupted later runs' #else handling.
+   Repro: token streams differ vs clean baseline. tests/test_haxe.py: old fail / new pass.
+- Triage: buildbot (safe [:] rebind), virtualenv (documented lock registry) = intentional.
+- P7 silent-excepts (celery/ansible/keyring): all intentional control flow — pattern dropped.
