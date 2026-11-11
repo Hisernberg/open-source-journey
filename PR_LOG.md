@@ -579,3 +579,26 @@ tracked list. All future counts use live-API verification only.
   (migration guide user/ -> meta/) FILED.
 - BLOCKED-PR QUEUE now 4: localstack (utcnow), httpx (advanced link), rich (blog links),
   mkdocs (gitter chat). All branches pushed and ready; orgs reject API-created PRs.
+
+### Day-7 s9: reviewer feedback + executable bug-hunt + reconciliation work
+- libcloud #2216 (micafer CHANGES_REQUESTED): moved 4 regression test classes above
+  __main__ guard, added CHANGES.rst entry under 4.0.0/DNS. All 64 tests pass locally.
+  Pushed + replied. Sparse-checkout tripping: disabled for the worktree.
+- libcloud #2066 reconciliation (aaron-sierra's stalled DNS PR): analyzed the NsOneResponse
+  hunks — semantically identical; posted reconciliation notes on BOTH PRs (no behavioral
+  decision needed; my regression tests pin the shared behavior).
+- sherpa-ncnn #447 (csukuangfj: "you only fixed a typo"): he was right — pushed 2nd commit
+  with the actual dead-link fix (pinned 1.3.236.0 dmg 404 -> official /latest/ URL, 200).
+  Replied with evidence. Only pinned URL in the doc tree (checked all .md).
+- pypdf #4409: PR Title Check failed -> retitled to "DOC: ..." (their convention:
+  SEC/BUG/ENH/DEP/PI/ROB/DOC/TST/DEV/STY/MAINT).
+- geopandas #3916 CI = startup_failure with 0 jobs (infra); README-only change unaffected.
+- EXECUTABLE BUG-HUNT (new advanced channel, scripts/): pypdf_fuzz.py (45 malformed-PDF
+  variants) found 3 crash signatures in pypdf 6.6.0 _flatten (TypeError/AttributeError on
+  garbage /Kids) — ALREADY FIXED on main (page-tree walker rewrite); released-version
+  crashes are stale. sympy_hunt.py + sympy_hunt2.py: 2 batteries, brute-force verified
+  (sqrt_mod/nthroot_mod/discrete_log/primitive_root/factorint/isprime-vs-Carmichael/
+  quadratic_residues/eigenvals/det-cross-check/n_order): 0 findings — number theory layer
+  solid. shapely_hunt.py: 0 findings (proper validation errors only).
+  VERDICT: famous pure-Python libs are hardened; executable hunting needs less-hardened
+  mid-tier targets if retried. Battery scripts persisted for reuse.
