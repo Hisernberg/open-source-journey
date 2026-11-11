@@ -560,3 +560,22 @@ User provided fresh tokens (GitHub/Kaggle/HF). Findings:
 Live API verification: psycopg#1493, pipenv#6785, opencv#30748/#30749/#30750 MERGED.
 diffusers#15232 is OPEN (earlier log entry was wrong). No scikit-image PR found in the
 tracked list. All future counts use live-API verification only.
+
+### Day-7 s8: mentions sweep + round-9 + docs batch 2
+- bokeh #15741: bryevdv (maintainer) positive — "removesuffix is definitely the more correct
+  approach. Thanks". Replied.
+- opencv #30753: two volunteers! Reviewed+APPROVED Lalesh2005's PR #30760 (verified oneVPL +
+  qt.io links); pointed sultan-ai-and-ml to another dead link (eigen.tuxfamily.org).
+- OpenNMT #2606: maintainer says toolkit superseded by eole-nlp/eole → closed gracefully;
+  scanned eole for the same patterns: clean, no port needed.
+- sympy #31033: Maintenance "Check Merge Conflicts" failure = repo-wide job, my PR
+  mergeable=True. updatePullRequestBranch run. No action needed.
+- opencv #30754/#30757 PR:5.x CI = startup_failure with 0 jobs (infra), docs-only PRs.
+- Round-9 (36 mid-tier repos, P54/P59/P60 classes): 1336 hits = 1285 assert-noise + 48
+  char-set strips + 2 intentional utcfromtimestamp fallbacks (py<3.11 branch, correct).
+  AST-pattern class EXHAUSTED — retire it; docs-link audits remain the productive channel.
+- Docs batch 2: tqdm #1920 (stargazers 404) FILED; geopandas #3916 (gitter x2 + NYC
+  dataset ID tqmj-j8zm -> gthc-hcne via Socrata catalog API) FILED; pypdf #4409
+  (migration guide user/ -> meta/) FILED.
+- BLOCKED-PR QUEUE now 4: localstack (utcnow), httpx (advanced link), rich (blog links),
+  mkdocs (gitter chat). All branches pushed and ready; orgs reject API-created PRs.
