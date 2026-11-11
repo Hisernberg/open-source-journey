@@ -413,3 +413,19 @@ HTML-page audit (API rate-limited without token):
 - All 12 queued branches verified on forks via git ls-remote (10 sympy incl. #31033 branch + 2 rich).
 - scripts/fire_queue.py written: `--go` fires all 10 PRs (bodies embedded, dedup-safe, 20s pacing).
 - NEXT ACTION FOR USER: provide a fresh GitHub token (paste in chat). Then: fire_queue.py --go.
+
+## Day-6: maintainer feedback audit (issue-page HTML) — 3 actions queued
+1. sympy #31033: Check Authors CI FAILING — commit email must be the account-linked
+   noreply form `169257061+Hisernberg@users.noreply.github.com`. respond_feedback.py
+   amends the commit and force-pushes the branch.
+2. diffusers #15232: maintainer asks for a linked issue -> response drafted
+   (systematic link sweep, no pre-existing issue; offer to open a tracking issue).
+3. opencv #30754: maintainer says the embed resolves on 5.x (IMAGE_PATH RECURSIVE=YES)
+   and upstream 5b0f2b1 shipped the real asset -> withdraw PR gracefully (drafted).
+
+## Day-6: repo policy lessons (workflow update)
+- tinygrad: "All docs and whitespace changes will be closed unless you are a
+  well-known contributor" -> NO docs-only PRs to tinygrad ever again.
+- fastapi: small docs fixes must be reported in the pinned discussion, not PRs;
+  my finding was accepted into maintainer aggregate PR #16407.
+- requests/rich/numpy current issues: nearly all claimed; verify claim status first.
