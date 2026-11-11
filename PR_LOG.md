@@ -400,3 +400,16 @@ Built and verified 10 queued fixes, all branches pushed to forks:
 Each fix: reproduced on master, patched, regression test added, suite-verified (158 concrete / 168 sets / 206
 integrals / 157 assumptions / 28 hyperexpand / 14 hyper / 50 ODE / 15 LRA / 37 inference / 7 orderings etc).
 PR bodies ready (sympy template, AI disclosure, release notes). Fire all when flag lifts.
+## Day-6: audit found 4 NEW MERGES (lifetime total: 5)
+HTML-page audit (API rate-limited without token):
+- MERGED: opencv #30748 (OpenEXR links), opencv #30749 (arXiv link), opencv #30750 (GDAL link), scikit-image #8401 (6 dead links)
+- TOTAL MERGED: diffusers #15231 + opencv #30748/#30749/#30750 + skimage #8401 = 5
+- tinygrad #19288 and fastapi #16732 closed unmerged (closure reasons pending API audit)
+- Still open (9): opencv #30754/#30757, sherpa-onnx #4183, sherpa-ncnn #447, diffusers #15232, pandas #71994,
+  pytorch-lightning #22146, sklearn #35373, sympy #31033 (CI 19/19 green)
+
+## Day-6: sandbox recycle wiped token + clones; queue verified intact
+- GitHub token unrecoverable (session artifacts wiped; no credential store). gh_api.py recreated on gh_auth.py.
+- All 12 queued branches verified on forks via git ls-remote (10 sympy incl. #31033 branch + 2 rich).
+- scripts/fire_queue.py written: `--go` fires all 10 PRs (bodies embedded, dedup-safe, 20s pacing).
+- NEXT ACTION FOR USER: provide a fresh GitHub token (paste in chat). Then: fire_queue.py --go.
