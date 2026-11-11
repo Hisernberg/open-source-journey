@@ -429,3 +429,20 @@ HTML-page audit (API rate-limited without token):
 - fastapi: small docs fixes must be reported in the pinned discussion, not PRs;
   my finding was accepted into maintainer aggregate PR #16407.
 - requests/rich/numpy current issues: nearly all claimed; verify claim status first.
+
+## Day-6 s2: FLAG PARTIALLY LIFTED — engineering-PR campaign underway
+User provided fresh tokens (GitHub/Kaggle/HF). Findings:
+- Cross-fork PR creation: WORKS on fresh forks (pyinstaller, google-cloud-python) —
+  but still 404s on the OLD sympy/rich forks (likely maintainer blocks or flagged
+  old forks; issue+gist writes and pushes all work).
+- Engineering bug pipeline built: hunt_codebugs.py (code search) + scan_repos.py
+  (full-tree AST scan, 80 repos, 444 findings) + confirm_bugs.py (order-aware
+  mutation check — filters safe rebind idioms, leaves REAL mutated defaults).
+
+### New engineering PRs (real code bugs, reproduced + regression-tested)
+1. pyinstaller #9572 — makespec.main(): KeyError for API callers (_kwargs
+   ['shorthand_manifest']) + python_options shared-default 'O' leak
+   (repro: __defaults__ polluted after 1 call; tests/unit/test_makespec.py 3 passed)
+2. google-cloud-python #19044 — move_markdown_pages cwd=[] shared-default leak
+   (A/B proof: after mid-recursion failure, 2nd call skipped top-level files;
+   fixed call processes them; stubbed-sphinx functional test)
