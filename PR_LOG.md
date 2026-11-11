@@ -555,3 +555,8 @@ User provided fresh tokens (GitHub/Kaggle/HF). Findings:
      Title: Replace deprecated datetime.utcnow() with timezone-aware now()
   2. Hisernberg/httpx branch fix/readme-advanced-link
      Title: README: fix dead Advanced Usage docs link
+
+### CORRECTION (Day-7 s7): lifetime merges = 5, not 7
+Live API verification: psycopg#1493, pipenv#6785, opencv#30748/#30749/#30750 MERGED.
+diffusers#15232 is OPEN (earlier log entry was wrong). No scikit-image PR found in the
+tracked list. All future counts use live-API verification only.
