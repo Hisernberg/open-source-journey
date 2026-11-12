@@ -619,3 +619,33 @@ Total merged PRs (all repos, author Hisernberg): 151 (live-authenticated, all pa
     11. scikit-image #8401     (2026-11-10) 6 dead doc links
     12. huggingface/diffusers #15231 (2026-11-10) dead Kaggle dataset URL
 First real code-bug merge: libcloud #2216 (behavioral fix + regression tests + changelog).
+
+### Day-7 s11: 45-REPO MILESTONE — 13 PRs + 1 issue fired in one session
+New-repo expansion (pattern scans + link audits across ~90 repos):
+- ray-project/ray #68106: utcnow/utcfromtimestamp 6 call sites, 4 files (incl. naive-preserving
+  fix for to_posix_time's naive-epoch subtraction).
+- python/mypy #22450: dead Gitter -> Typing Discord (python/typing README as source).
+- dateutil/dateutil #1673: dead Gitter badge removed. (CI "Validate" = startup_failure, 0 jobs, infra.)
+- elastic/elasticsearch-py #3621: utcfromtimestamp x2, naive-UTC contract preserved.
+- django-extensions/django-extensions #2011: sync_s3 utcfromtimestamp (naive s3_datetime compare).
+- kubernetes-client/python #2779: kube_config aio utcnow/utcfromtimestamp + examples.
+- pdfminer/pdfminer.six #1318: dead Gitter x2. CI SUCCESS already.
+- celery/kombu #2849: CI badge pointed at nonexistent ci.yml -> python-package.yml.
+- apache/superset #46178: dead stargazers badge (GitHub removed page sitewide) + dead netlify badge.
+- pymupdf/PyMuPDF #5272: COPYING master->main branch rename + stargazers. (CLA Assistant FAILS - signing needed, same class as pytorch/vision Meta CLA.)
+- huggingface/peft #4160: 3 dead links (TRL deleted examples/notebooks trees; dead HF Space).
+- huggingface/accelerate #4530: dead kornia.x Trainer link (module removed from kornia docs).
+- pytest-dev/pluggy #831: dead Gitter badge (45th repo!).
+- pallets/werkzeug #3351: ISSUE not PR — pull_request_creation_policy=collaborators_only.
+
+KEY DISCOVERY (saves future bad PRs): GitHub repos now expose pull_request_creation_policy.
+BLOCKED (collaborators_only, API PR create = 404): pallets/* (werkzeug, flask, click, jinja),
+encode/* (httpx, httpcore, starlette), streamlit, gradio, PyCQA/flake8, psf/requests,
+mkdocs, localstack. This retroactively explains the stuck fork-queue (httpx/rich/mkdocs/requests)!
+pattern scans: werkzeug examples utcnow = real but blocked; airflow + mlflow utcnow ALREADY
+fixed upstream (stale code-search index — verified before firing); arrow utcfromtimestamp =
+own public API; superset/meltano/marimo/tornado hits = tests/migrations/smoke-tests (skip).
+Honest skips: aws-cli (CLA), tablib/pelican (viewer-dependent/unverifiable), label-studio
+(link inside HTML comment), altair/poetry/nltk/black/pytest hits (regex artifacts).
+CI status: mypy #22450 + pdfminer #1318 CLEAN; others pending fork-CI approval (normal).
+SESSION TOTAL: 45 distinct third-party repos touched (12 merged PRs + 38 open PRs + issues).
