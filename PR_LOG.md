@@ -602,9 +602,9 @@ tracked list. All future counts use live-API verification only.
   solid. shapely_hunt.py: 0 findings (proper validation errors only).
   VERDICT: famous pure-Python libs are hardened; executable hunting needs less-hardened
   mid-tier targets if retried. Battery scripts persisted for reuse.
-### Day-7 s10: MERGE INVENTORY (live GitHub search, 2026-11-12)
-Total merged PRs (all repos, author Hisernberg): 105
-  - 93 = own-repo competition campaign logs (kraggle-3-in-one, arc-agi-3, arc-whitebox, arc-agi-2-kaggle, spanguard)
+### Day-7 s10: MERGE INVENTORY (live authenticated GitHub search, 2026-11-12)
+Total merged PRs (all repos, author Hisernberg): 151 (live-authenticated, all pages fetched)
+  - 139 = own-repo competition campaign logs (kraggle-3-in-one, arc-agi-3, arc-whitebox, arc-agi-2-kaggle, spanguard; count grows as parallel sessions log)
   - 12 = THIRD-PARTY open-source merges:
     1.  apache/libcloud #2216  (2026-11-12) REAL CODE BUG: shared class-level errors/objects in 4 DNS response classes — merged hours after review fixes pushed
     2.  apache/libcloud #2217  (2026-11-12) datetime.utcnow() removal, 9 call sites
