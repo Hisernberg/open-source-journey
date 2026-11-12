@@ -602,3 +602,20 @@ tracked list. All future counts use live-API verification only.
   solid. shapely_hunt.py: 0 findings (proper validation errors only).
   VERDICT: famous pure-Python libs are hardened; executable hunting needs less-hardened
   mid-tier targets if retried. Battery scripts persisted for reuse.
+### Day-7 s10: MERGE INVENTORY (live GitHub search, 2026-11-12)
+Total merged PRs (all repos, author Hisernberg): 105
+  - 93 = own-repo competition campaign logs (kraggle-3-in-one, arc-agi-3, arc-whitebox, arc-agi-2-kaggle, spanguard)
+  - 12 = THIRD-PARTY open-source merges:
+    1.  apache/libcloud #2216  (2026-11-12) REAL CODE BUG: shared class-level errors/objects in 4 DNS response classes — merged hours after review fixes pushed
+    2.  apache/libcloud #2217  (2026-11-12) datetime.utcnow() removal, 9 call sites
+    3.  k2-fsa/sherpa-ncnn #447 (2026-11-12) dead Vulkan SDK link + typos (fixed after maintainer challenge)
+    4.  k2-fsa/sherpa-onnx #4183 (2026-11-12) dead hf.qhduan.com mirrors -> huggingface.co
+    5.  bokeh/bokeh #15741     (2026-11-11) removesuffix vs rstrip subcommand parsing
+    6.  pypa/pipenv #6785      (2026-11-11) missing f-string license path
+    7.  psycopg/psycopg #1493  (2026-11-11) missing f-string update_error_prefixes
+    8.  opencv/opencv #30750   (2026-11-11) duplicated URL scheme GDAL tutorial
+    9.  opencv/opencv #30749   (2026-11-11) malformed arXiv link
+    10. opencv/opencv #30748   (2026-11-11) dead OpenEXR link
+    11. scikit-image #8401     (2026-11-10) 6 dead doc links
+    12. huggingface/diffusers #15231 (2026-11-10) dead Kaggle dataset URL
+First real code-bug merge: libcloud #2216 (behavioral fix + regression tests + changelog).
