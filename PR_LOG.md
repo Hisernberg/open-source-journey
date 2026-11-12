@@ -667,3 +667,29 @@ SESSION TOTAL: 45 distinct third-party repos touched (12 merged PRs + 38 open PR
 - All 5 staged as exact fire-ready specs + scripts/fire_next.py one-command firer
   (dry-run validated). When token returns: `python3 scripts/fire_next.py` fires
   5 PRs + 1 indent amend in one run.
+
+### Day-7 s13: token restored — 6 fired + full sweep + feedback round (MILESTONE: 13 merged)
+- Fresh token installed (Hisernberg, repo scope). All 6 staged specs fired in one run
+  (scripts/fire_next.py): matplotlib #32591, nipy/nibabel #1620, python-trio/trio #3591,
+  urwid/urwid #1650, SeleniumHQ/selenium #18310, + django-extensions #2011 amended
+  (indent fix verified in final diff: clean 6-line naive-preserving replacement).
+  Trio/selenium base-branch + trio RST-indentation spec bugs fixed on the fly.
+- CI: mpl/nibabel/trio SUCCESS; selenium/urwid pending.
+- SWEEP (48 open PRs, third-party): **13 merged total** (was 12): newest = apache/libcloud
+  #2216 (shared class-level list bug, 13:40Z). No new merges since libcloud#2216.
+- Closures: huggingface/peft #4160 auto-closed by triage bot (needs accepted-issue reference —
+  standard gate, not worth relitigating); opencv #30754 withdrawn by us after contributor
+  Prasadayus correctly showed IMAGE_PATH+RECURSIVE=YES already resolves the embed on 5.x.
+- FEEDBACK ACTIONS (all done):
+  * apache/superset #46178: sfirke asked for removal instead of retarget -> pushed removal
+    commit (stars badge line deleted), rewrote title/body, replied agreeing.
+  * chriskiehl/Gooey #985: retargeted to 1.0.9-release per sbillinge + replied.
+  * conda/conda #16989: danyeaw asked about CLA — replied asking for the signing link
+    (CLA systems need browser OAuth; cannot sign from sandbox. PENDING USER).
+  * coqui-ai/TTS #4449: eginhard said repo unmaintained, resubmit to idiap/coqui-ai-TTS ->
+    verified bug present on dev, fork created as Hisernberg/TTS (network keeps old name),
+    fired idiap/coqui-ai-TTS #606, cross-commented on #4449.
+- PENDING USER (browser-only CLA signing): conda #16989, elasticsearch-py #3621,
+  kubernetes-client/python #2779 (easycla), pytorch/vision #9752 (Meta CLA),
+  PyMuPDF #5272 (Artifex), selenium #18310 (cla-assistant), superset merged-adjacent N/A.
+- Campaign totals: 13 merged + 48 open third-party PRs, 50 distinct repos touched.
