@@ -649,3 +649,21 @@ Honest skips: aws-cli (CLA), tablib/pelican (viewer-dependent/unverifiable), lab
 (link inside HTML comment), altair/poetry/nltk/black/pytest hits (regex artifacts).
 CI status: mypy #22450 + pdfminer #1318 CLEAN; others pending fork-CI approval (normal).
 SESSION TOTAL: 45 distinct third-party repos touched (12 merged PRs + 38 open PRs + issues).
+
+### Day-7 s12: tokenless prep session (sandbox recycled, GitHub token lost)
+- Sandbox recycle wiped session artifacts incl. GitHub token; only Kaggle/HF creds remain
+  (NOT used). PR firing + tracker push blocked until fresh token lands in work/.github_tokens
+  (path gh_auth.py already watches).
+- Quality audit of riskiest PR diffs via raw fetches: ray #68106 + es-py #3621 exact & correct;
+  django-extensions #2011 has sloppy continuation indentation -> staged amend spec
+  (next_specs/fix_syncs3_indent.json).
+- Tokenless audit batch 6 (24 repos): 5 NEW repos with verified dead links:
+  * matplotlib: Discourse chat category REMOVED (verified via site.json category list);
+    badge + paragraph re-pointed to live Contributing category (200 OK).
+  * nibabel: CI badge -> nonexistent stable.yml (workflow list verified: test.yml is real).
+  * trio: dead Gitter badge + sentence; live forum trio.discourse.group verified 200.
+  * urwid: dead Gitter badge, no replacement (remove).
+  * selenium: decade-dead rubyforge.org rake link -> ruby.github.io/rake (200 OK).
+- All 5 staged as exact fire-ready specs + scripts/fire_next.py one-command firer
+  (dry-run validated). When token returns: `python3 scripts/fire_next.py` fires
+  5 PRs + 1 indent amend in one run.
