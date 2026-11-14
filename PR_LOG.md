@@ -693,3 +693,29 @@ SESSION TOTAL: 45 distinct third-party repos touched (12 merged PRs + 38 open PR
   kubernetes-client/python #2779 (easycla), pytorch/vision #9752 (Meta CLA),
   PyMuPDF #5272 (Artifex), selenium #18310 (cla-assistant), superset merged-adjacent N/A.
 - Campaign totals: 13 merged + 48 open third-party PRs, 50 distinct repos touched.
+
+### Day-7 s14: SCALE RUN — 440-repo audit, 2 fire waves (IN PROGRESS at cutoff)
+- Goal: 100 repos / 150+ PRs. Sandbox recycled again mid-day -> user token re-armed (valid).
+- SCAN: 440 fresh candidate repos link-audited (2 waves, tokenless raw fetches);
+  158 repos with verified dead URLs; utcnow code-search waves 1+2 = low yield
+  (pendulum/arrow are own-API, k2/coremltools vendored -> skipped).
+- PIPELINE (all new, persisted in scripts/): link_audit_mega.py (scan) ->
+  spec_links.py (classify: workflow-badge retarget via HTML tree, gitter->live forum,
+  KNOWN_MAP, https-upgrade, prose_to_text, safe removals; paper-registry + `}`-template
+  + example-URL filters; 6-edit cap) -> validate_specs.py (simulate every patch vs raw
+  base file; rejects dup old-strings, mid-sentence/prose-fragment removals, dead
+  replacement URLs) -> fire_next.py (fork/branch/commit/PR, dup-check).
+- VALIDATOR REJECTED 21 specs (would have been bad PRs): code-example URLs (nock,
+  responses), install-command prose (xla, prompt-toolkit, doctl, flannel, dashboard),
+  duplicate old-strings (chef, etcd, soda-core, ConfigArgParse), glue/marqo prose.
+- FIRED TODAY: 6 (earlier: mpl/nibabel/trio/urwid/selenium/coqui-idiap)
+  + wave1 53 + wave2 29-so-far-and-counting = 88+ PRs live.
+- MERGES NOW: **17 third-party merged** (+4 since s13: nats-io/nats.py #1115 utcnow,
+  idiap/coqui-ai-TTS #606 (coqui resubmission!), py-pdf/pypdf #4409, nipy/nibabel #1620).
+- RETRY QUEUE (fork-not-ready / transient): PaddleNLP, sktime, pyjanitor, datatable,
+  h2o-3, jython, griffe, hyper-h2, twisted, pandas-profiling, podman, oncall — specs
+  staged in scripts/next_specs/, `python3 scripts/fire_next.py` resumes them.
+- Wave-2 process may not survive session end: remaining specs stay on disk; resume =
+  re-run fire_next.py (all specs self-dedup via open-PR branch check).
+- REPOS TOUCHED: excl ledger at 247+ entries (incl. noise); exact distinct-repo count
+  computed next session from search API. Tracker contributions.csv needs s14 sweep.
